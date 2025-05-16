@@ -1,2 +1,7 @@
+# IDE
 .idea
+
+## Firebase
 js/firebase-config.js
+.firebaserc
+.firebase

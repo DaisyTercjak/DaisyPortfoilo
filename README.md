@@ -35,7 +35,7 @@ This project is a JavaScript port of the original Python Flask-based Daisy Portf
 
    - **Using Node.js (http-server):**
      ```sh
-     npm install -g http-server
+     # npm install -g http-server
      http-server -p 8000
      # Then open http://localhost:8000 in your browser
      ```
