@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Sign Up Page{% endblock %}
+{% block h1_header %}Sign Up Page{% endblock %}
+{% block content %}
+           <!-- Page Content-->
+                <section class="py-5">
+                <div class="container px-5 mb-5">
+                    <div class="text-center mb-5">
+                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Stats</span></h1>
+                         <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-11 col-xl-9 col-xxl-8">
+                            <!-- Project Card 1-->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <canvas id="scoreChart" width="400" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+    <script>
+    let scores1 = {{ scores1 | tojson }};  // Scores for Game 1 (Whack-a-Mole)
+    let scores2 = {{ scores2 | tojson }};  // Scores for Game 2 (Space-Invaders)
+    let dates1 = {{ dates1 | tojson }};    // Dates for Game 1
+    let dates2 = {{ dates2 | tojson }};    // Dates for Game 2
+
+    // Merge dates from both datasets and remove duplicates to create a unified X-axis
+    let allDates = [...new Set([...dates1, ...dates2])];
+
+    // Function to match scores with corresponding dates (fills missing dates with null)
+    function alignScores(dates, scores, allDates) {
+        let scoreMap = new Map(dates.map((date, index) => [date, scores[index]]));
+        return allDates.map(date => scoreMap.get(date) || null);
+    }
+
+    let alignedScores1 = alignScores(dates1, scores1, allDates);
+    let alignedScores2 = alignScores(dates2, scores2, allDates);
+
+    let ctx = document.getElementById('scoreChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: allDates, // Unified X-axis
+            datasets: [
+                {
+                    label: 'Whack-a-mole',
+                    data: alignedScores1,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderWidth: 2
+                },
+                {
+                    label: 'Space-Invaders',
+                    data: alignedScores2,
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                    borderWidth: 2
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: true },
+                tooltip: { enabled: true }
+            },
+            scales: {
+                x: { title: { display: true, text: 'Date' } },
+                y: { title: { display: true, text: 'Score' } }
+            }
+        }
+    });
+</script>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+{% endblock %}

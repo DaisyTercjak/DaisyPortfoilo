@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Games & Tests{% endblock %}
+{% block h1_header %}Games & Tests{% endblock %}
+{% block content %}
+               <section class="py-5">
+                <div class="container px-5 mb-5">
+                    <div class="text-center mb-5">
+                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Games & Tests</span></h1>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-11 col-xl-9 col-xxl-8">
+                            <!-- Project Card 1-->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex align-items-center">
+                                        <div class="p-5">
+                                            <h2 class="fw-bolder">Whack-a-mole</h2>
+                                            <p>Step into the garden and test your reflexes in this fun twist on the classic Whack-a-Mole! In this game, moles pop up from the pipes, and your goal is to click them to score +10 points. But be careful—piranha plants will also appear, and if you click on one, it's Game Over!
+                                                How many points can you score before the garden gets the better of you? Ready, set, whack! 🌱🛠️</p>
+                       <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="/games/whack-a-mole">Play</a>
+                                </div>
+                                        </div>
+                                        <img src="{{ url_for('static', filename='images/whack-a-mole.png') }}" alt="whack-a-mole">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex align-items-center">
+                                        <div class="p-5">
+                                            <h2 class="fw-bolder">Space Invaders</h2>
+                                            <p>Welcome to Space Invaders, a classic arcade-style game built with JavaScript!
+                                                Use precision and timing to shoot down the aliens, earning 10 points per alien.
+                                                Once you clear a group of invaders, prepare for an even greater challenge—each wave will expand, pushing your skills to the limit!
+                                                Do you have what it takes to protect the planet and rack up the highest score? Let the battle begin! 🚀👾</p>
+                       <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="/games/space-invaders">Play</a>
+                                </div>
+                                        </div>
+                                        <img src="{{ url_for('static', filename='images/space-invaders.png') }}" alt="space-invaders">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex align-items-center">
+                                        <div class="p-5">
+                                            <h2 class="fw-bolder">Thomas International GIA Test</h2>
+                                            <p>The Thomas International GIA (General Intelligence Assessment) is a quick cognitive test designed to measure how fast you learn and process information.
+                                                In this short version, you'll have 5 minutes to answer a few sample questions covering areas like reasoning, number speed, word meaning, and spatial awareness.
+                                                It's all about your ability to think on your feet—so just relax, focus, and do your best!</p>
+                       <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="/games/thomas-gia">Start</a>
+                                </div>
+                                        </div>
+                                        <img src="{{ url_for('static', filename='images/thomas-gia.png') }}" alt="thomas-gia">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+{% endblock %}

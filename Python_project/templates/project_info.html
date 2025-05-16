@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Sign Up Page{% endblock %}
+{% block h1_header %}Sign Up Page{% endblock %}
+{% block content %}
+               <section class="py-5">
+                <div class="container px-5 mb-5">
+                    <div class="text-center mb-5">
+                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Project Path</span></h1>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-11 col-xl-9 col-xxl-8">
+                            <!-- Project Card 1-->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex align-items-center">
+                                        <div class="p-5">
+                                            <h2 class="fw-bolder">Frontend</h2>
+                                            <p>The frontend features a collection of interactive JavaScript-based games designed for users to play and enjoy. It offers an engaging and user-friendly interface, ensuring a fun and dynamic experience for players.</p>
+                                        </div>
+                                         <img src="{{ url_for('static', filename='images/js-logo.png') }}" alt="Jetbrains Logo" width="300px">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Project Card 2-->
+                            <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
+                                <div class="card-body p-0">
+                                    <div class="d-flex align-items-center">
+                                        <div class="p-5">
+                                            <h2 class="fw-bolder">Backend</h2>
+                                            <p>The backend, built with Python and Flask, handles critical functionalities such as user authorization, storing game scores, and generating player statistics. It ensures secure access, reliable data persistence, and seamless performance tracking.</p>
+                                        </div>
+                                         <img src="{{ url_for('static', filename='images/python-logo.png') }}" alt="Jira Board">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </section>
+{% endblock %}

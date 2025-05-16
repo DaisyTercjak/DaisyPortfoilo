@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+}
+
+#board {
+    background-color: black;
+
+    #start-btn, #restart-btn {
+    margin-right: 50px; /* Adjust the value as needed */
+}
+}
+
+.warning-notice {
+    color: red;
+    font-size: 24px; /* Adjust the size as needed */
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffe6e6; /* Light red background for emphasis */
+    /*border: 2px solid red;*/
+    /*border-radius: 5px;*/
+    margin: 10px 0 20px 0; /* Top: 10px, Right: 0, Bottom: 20px, Left: 0 */
+}
+

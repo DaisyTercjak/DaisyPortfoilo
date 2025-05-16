@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form method="POST">
+
+    <div class="form-group">
+        <label for="Brand">Brand</label>
+        <input
+        type="text"
+        class="form-control"
+        id="brand"
+        name="brand"
+        placeholder=""
+        />
+    </div>
+    <div class="form-group">
+        <label for="Value">Value</label>
+        <input
+        type="text"
+        class="form-control"
+        id="value"
+        name="value"
+        placeholder=""
+        />
+    </div>
+    <div class="form-group">
+        <label for="Quantity">Quantity</label>
+        <input
+        type="text"
+        class="form-control"
+        id="quantity"
+        name="quantity"
+        placeholder=""
+        />
+        </div>
+
+
+       <button type="Submit" class="btn btn-primary">Submit</button>
+
+     <ul  id="car">
+    {% for car in user.car%}
+    <li class="list-group-item"> <b> {{ car.brand }}. </b> <br/> Added {{ car.value }}  </li>
+    {% endfor %}
+
+</ul>
+</form>
+
+{% endblock %}
