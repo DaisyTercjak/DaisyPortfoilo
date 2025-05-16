@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+}
+
+#board {
+    background-color: black;
+}
+
+#start-btn, #restart-btn {
+    margin-right: 50px;
+}
+
+.warning-notice {
+    color: red;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffe6e6;
+    margin: 10px 0 20px 0;
+} 
