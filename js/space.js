@@ -37,7 +37,7 @@ let alienImg;
 let alienRows = 2;
 let alienColumns = 3;
 let alienCount = 0;
-let alienVelocityX = 1; // Alien movement speed
+let alienVelocityX = 2; // Alien movement speed (default)
 
 // Bullets
 let bulletArray = [];
@@ -45,6 +45,7 @@ let bulletVelocityY = -10; // Bullet movement speed
 
 let score = 0;
 let gameOver = false;
+let animationFrameId = null;
 
 // Load game when the window is ready
 window.onload = function () {
@@ -78,16 +79,15 @@ function setGame() {
     gameOver = false;
     alienArray = [];
     bulletArray = [];
-
     // Reset ship position
     ship.x = shipX;
     ship.y = shipY;
-
     // Clear board
     context.clearRect(0, 0, board.width, board.height);
-
     // Update score display
     document.getElementById("score").innerText = score.toString();
+    // Draw the ship only (no aliens)
+    context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
 }
 
 // Start the game
@@ -95,18 +95,24 @@ function startGame() {
     document.getElementById("game-over").classList.remove("warning-notice");
     document.getElementById("game-over").innerText = "";
     setGame();
-     // Create aliens only when the start button is pressed
+    // Create aliens only when the start button is pressed
     alienColumns = 3;
     alienRows = 2;
-    alienVelocityX = -100;
+    alienVelocityX = 2; // SLOWER SPEED
     createAliens();
-    requestAnimationFrame(update);
+    animationFrameId = requestAnimationFrame(update);
 }
 
 // Restart the game
 function restartGame() {
+    // Cancel the animation frame to stop the game loop
+    if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+    }
     setGame();
-    startGame();
+    // Do NOT call startGame();
+    // This will clear the board and aliens, and only show aliens when the start button is clicked
 }
 
 // Game update loop
@@ -117,7 +123,7 @@ function update() {
         return;
     }
 
-    requestAnimationFrame(update);
+    animationFrameId = requestAnimationFrame(update);
     context.clearRect(0, 0, board.width, board.height);
 
     // Draw ship

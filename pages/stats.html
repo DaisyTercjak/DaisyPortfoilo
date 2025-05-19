@@ -28,30 +28,6 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        // Example chart placeholder
-        const ctx = document.getElementById('statsChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Game 1', 'Game 2', 'Game 3'],
-                datasets: [{
-                    label: 'Scores',
-                    data: [12, 19, 3],
-                    backgroundColor: [
-                        'rgba(30, 48, 243, 0.7)',
-                        'rgba(226, 30, 128, 0.7)',
-                        'rgba(25, 135, 84, 0.7)'
-                    ]
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: { display: false }
-                }
-            }
-        });
-    </script>
+    <script type="module" src="../js/stats.js"></script>
 </body>
 </html> 

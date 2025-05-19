@@ -37,7 +37,7 @@ let alienImg;
 let alienRows = 2;
 let alienColumns = 3;
 let alienCount = 0;
-let alienVelocityX = 10; // Alien movement speed
+let alienVelocityX = 100; // Alien movement speed
 
 // Bullets
 let bulletArray = [];
