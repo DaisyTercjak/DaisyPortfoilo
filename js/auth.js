@@ -39,7 +39,7 @@ function updateNavigation(isAuthenticated) {
     } else {
         navItems.innerHTML = `
             <li class="nav-item"><a class="nav-link" href="pages/signup.html">Sign Up</a></li>
-            <li class="nav-item"><a class="nav-link" href="pages/login.html">Login</a></li>
+            
         `;
     }
 }
